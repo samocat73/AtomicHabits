@@ -1,0 +1,32 @@
+# API сервис для управления привычками. Интегрирован с telegram
+
+## Шаги по размещению проекта на виртуальной машине
+### Шаг 1. Установка необходимого ПО на машину
+**Выполните команды для бновление системы**
+```angular2html
+sudo apt update
+sudo apt upgrade
+```
+**Установите Docker. Подробная инструкция по ссылке:**
+**https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository**
+
+**Настройте файервол**
+```angular2html
+sudo ufw enable
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 22/tcp
+```
+**Установите Git**
+```angular2html
+sudo apt install git
+```
+### Шаг 2. Добавление переменных GitHub Secrets
+**Необходимые переменные:**
+```angular2html
+SERVER_IP 
+SSH_KEY 
+SSH_USER
+ENV_FILE #Тут должны находится переменные окружения, которые определенны в файл .venv.example
+```
+### WorkFloy запускается при каждом push и pull_request. После всех этих настроек выполните коммит в репозиторий и этот проект успешно развернется на в виртуальной машине.
